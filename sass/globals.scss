@@ -1,0 +1,49 @@
+$fontSize: 16px;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import './colors';
+@import './mixins';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 150vh;
+  background-color: $lessWhite;
+  h1 {
+    font-size: $fontSize * 2;
+    font-weight: 700;
+    text-align: center;
+  }
+  h2 {
+    font-size: $fontSize * 1.5;
+  }
+  h3 {
+    font-size: $fontSize * 1.2;
+  }
+}
+
+@media screen and(min-width:992px) {
+  body {
+    h1 {
+      font-size: $fontSize * 3;
+    }
+    h2 {
+      font-size: $fontSize * 2.5;
+    }
+    h3 {
+      font-size: $fontSize * 2;
+    }
+    p {
+      font-size: $fontSize * 1.2;
+    }
+  }
+}
+
+@import './../layout/layout';

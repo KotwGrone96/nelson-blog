@@ -1,0 +1,101 @@
+.banner_container {
+  width: 100%;
+  height: 750px;
+  background-image: url('/images/banner.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0005;
+    z-index: 20;
+  }
+  h1 {
+    max-width: 150px;
+    height: max-content;
+    margin: 0 auto;
+    text-align: center;
+    color: #f1f1f1;
+    position: relative;
+    z-index: 50;
+    transform: translateY(100px);
+    text-transform: uppercase;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 150px;
+      height: 150px;
+      z-index: -1;
+      background-color: #1f1f1f;
+      transform: rotate(45deg) scale(0.7);
+      animation: rombo 5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: both;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  .banner_image {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 250px;
+    left: calc(50vw - 150px);
+    z-index: 50;
+    box-shadow: 20px 20px 50px #0000007e;
+    border-radius: 100px;
+    background-color: #ffffff1a;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    backdrop-filter: blur(5px);
+  }
+}
+
+@keyframes rombo {
+  0% {
+    box-shadow: 0 0px 10px 5px #8685ef;
+  }
+  40% {
+    box-shadow: 0 0px 10px 5px #00c896;
+  }
+  60% {
+    box-shadow: 0 0px 10px 5px #ff525a;
+  }
+  to {
+    box-shadow: 0 0px 10px 5px #c56ce4;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .banner_container {
+    height: 100vh;
+    h1 {
+      max-width: 300px;
+      &::before {
+        width: 300px;
+        height: 300px;
+        transform: rotate(45deg) scale(0.5);
+      }
+    }
+    .banner_image {
+      width: 420px;
+      height: 560px;
+      top: 325px;
+      left: calc(50vw - 210px);
+    }
+  }
+}

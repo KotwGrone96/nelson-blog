@@ -1,0 +1,47 @@
+#header {
+  .logo-container {
+    width: 250px;
+    height: 123px;
+    position: relative;
+    margin: 0 auto;
+    .logo {
+      transform: scale(0.8);
+    }
+  }
+  .utilities-container {
+    @include displayFlex(space-evenly, center);
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 1em 0;
+    .search {
+      @include displayFlex(center, center);
+      cursor: pointer;
+    }
+    .theme {
+      position: relative;
+      min-width: 30px;
+      min-height: 30px;
+      .theme-item {
+        position: absolute;
+        z-index: 100;
+        display: none;
+        cursor: pointer;
+      }
+      .active-theme {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #header {
+    @include displayFlex(center, center);
+    .header-item {
+      margin: 0;
+    }
+    .utilities-container {
+      width: 250px;
+    }
+  }
+}

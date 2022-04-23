@@ -1,0 +1,33 @@
+@mixin displayFlex($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin positionAbsTL($top, $left, $zIndex) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: $zIndex;
+}
+
+@mixin positionAbsTR($top, $right, $zIndex) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  z-index: $zIndex;
+}
+
+@mixin positionAbsBL($bottom, $left, $zIndex) {
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+  z-index: $zIndex;
+}
+
+@mixin positionAbsBR($bottom, $right, $zIndex) {
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+  z-index: $zIndex;
+}
