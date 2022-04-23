@@ -1,65 +1,95 @@
 import Image from 'next/image';
 import NavBar from '../components/NavBar';
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 export default function Layout({ children }) {
   const themeRef = useRef();
-
-  const handleTheme = () => {
-    const themes = Object.values(themeRef.current.children);
-    themes.forEach(theme => theme.classList.toggle('active-theme'));
-  };
+  const { data } = useContext(ThemeContext);
+  const { handleTheme, theme } = data;
 
   return (
     <>
-      <header id='header'>
-        <div className='header-item logo-container'>
-          <Image
-            src='/images/logo-250x123.png'
-            alt='nelson gamero'
-            objectFit='cover'
-            layout='fill'
-            className='logo'
-            priority
-          />
-        </div>
-        <NavBar />
-
-        <div className='header-item utilities-container'>
-          <span className='search'>
+      <>
+        <header
+          id='header'
+          style={theme === 'light' ? {} : { background: '#1f1f1f' }}
+        >
+          <div className='header-item logo-container'>
             <Image
-              src='/images/search-solid.svg'
-              alt='buscar'
-              width={30}
-              height={30}
+              src='/images/logo-250x123.png'
+              alt='nelson gamero'
+              objectFit='cover'
+              layout='fill'
+              className={`logo ${theme === 'light' ? '' : 'theme-dark-logo'}`}
+              priority
             />
-            Buscar
-          </span>
-          <div className='theme' ref={themeRef}>
-            <div className='theme-item active-theme'>
-              <Image
-                src='/images/moon-solid.svg'
-                alt='dark'
-                width={25}
-                height={25}
-                onClick={handleTheme}
-              />
-            </div>
+          </div>
+          <NavBar />
 
-            <div className='theme-item'>
+          <div className='header-item utilities-container'>
+            <span
+              className='search'
+              style={theme === 'light' ? {} : { color: '#ffffff' }}
+            >
               <Image
-                src='/images/sun-solid.svg'
-                alt='light'
-                width={25}
-                height={25}
-                onClick={handleTheme}
+                src='/images/search-solid.svg'
+                alt='buscar'
+                width={30}
+                height={30}
+                className={`logo ${
+                  theme === 'light' ? '' : 'theme-dark-search'
+                }`}
               />
+              Buscar
+            </span>
+            <div className='theme' ref={themeRef}>
+              <div
+                className={`theme-item ${
+                  theme === 'light' ? 'active-theme' : ''
+                }`}
+              >
+                <Image
+                  src='/images/moon-solid.svg'
+                  alt='dark'
+                  width={25}
+                  height={25}
+                  onClick={handleTheme}
+                  className={`logo ${
+                    theme === 'light' ? '' : 'theme-dark-icon'
+                  }`}
+                />
+              </div>
+
+              <div
+                className={`theme-item ${
+                  theme === 'dark' ? 'active-theme' : ''
+                }`}
+              >
+                <Image
+                  src='/images/sun-solid.svg'
+                  alt='light'
+                  width={25}
+                  height={25}
+                  onClick={handleTheme}
+                  className={`logo ${
+                    theme === 'light' ? '' : 'theme-dark-icon'
+                  }`}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </header>
-      {children}
-      <footer></footer>
+        </header>
+        {children}
+        <footer
+          id='footer'
+          style={
+            theme === 'light'
+              ? {}
+              : { background: 'linear-gradient(to left, #434343, #000000)' }
+          }
+        ></footer>
+      </>
     </>
   );
 }

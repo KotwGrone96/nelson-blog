@@ -7,6 +7,10 @@
     .logo {
       transform: scale(0.8);
     }
+    .theme-dark-logo {
+      filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(280deg)
+        brightness(107%) contrast(101%);
+    }
   }
   .utilities-container {
     @include displayFlex(space-evenly, center);
@@ -16,6 +20,10 @@
     .search {
       @include displayFlex(center, center);
       cursor: pointer;
+      .theme-dark-search {
+        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(280deg)
+          brightness(107%) contrast(101%);
+      }
     }
     .theme {
       position: relative;
@@ -26,6 +34,10 @@
         z-index: 100;
         display: none;
         cursor: pointer;
+        .theme-dark-icon {
+          filter: invert(59%) sepia(40%) saturate(3561%) hue-rotate(353deg)
+            brightness(99%) contrast(105%);
+        }
       }
       .active-theme {
         display: block;
