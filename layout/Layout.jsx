@@ -2,6 +2,7 @@ import Image from 'next/image';
 import NavBar from '../components/NavBar';
 import { useRef, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import Footer from '../components/Footer';
 
 export default function Layout({ children }) {
   const themeRef = useRef();
@@ -85,14 +86,7 @@ export default function Layout({ children }) {
           </div>
         </header>
         {children}
-        <footer
-          id='footer'
-          style={
-            theme === 'light'
-              ? {}
-              : { background: 'linear-gradient(to left, #434343, #000000)' }
-          }
-        ></footer>
+        <Footer />
       </>
     </>
   );

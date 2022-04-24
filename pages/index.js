@@ -74,6 +74,31 @@ export default function Home() {
                 </a>
               </Link>
             </section>
+            <section id='other-articles'>
+              <h2>Otros temas</h2>
+              <div className='other-wall'>
+                <Link href='/'>
+                  <a className='article'>
+                    <h3>¿Por qué usar Sass?</h3>
+                  </a>
+                </Link>
+                <Link href='/'>
+                  <a className='article'>
+                    <h3>Entendiendo NPM</h3>
+                  </a>
+                </Link>
+                <Link href='/'>
+                  <a className='article'>
+                    <h3>¿Qué es package.json?</h3>
+                  </a>
+                </Link>
+                <Link href='/'>
+                  <a className='article'>
+                    <h3>Freamework !== Librería</h3>
+                  </a>
+                </Link>
+              </div>
+            </section>
           </div>
         </main>
       </Layout>

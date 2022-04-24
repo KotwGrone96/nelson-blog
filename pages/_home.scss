@@ -75,6 +75,39 @@
         }
       }
     }
+    #other-articles {
+      padding-top: $fontSize * 3;
+      padding-bottom: $fontSize * 3;
+      .other-wall {
+        padding-top: $fontSize;
+        @include displayFlex(center, center);
+        flex-wrap: wrap;
+        .article {
+          width: 150px;
+          height: 200px;
+          outline: 1px solid red;
+          margin: $fontSize / 2;
+          position: relative;
+          border-radius: 7px;
+          overflow: hidden;
+          &:hover {
+            h3 {
+              transform: scale(1.1);
+            }
+          }
+          h3 {
+            font-size: $fontSize;
+            @include positionAbsBL(0, 0, 10);
+            text-align: center;
+            width: 100%;
+            color: $white;
+            background-color: #359;
+            padding: 0.5em;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -115,6 +148,18 @@
           }
           &:last-child {
             grid-row: span 2;
+          }
+        }
+      }
+      #other-articles {
+        .other-wall {
+          justify-content: space-between;
+          .article {
+            width: 200px;
+            height: 300px;
+            h3 {
+              font-size: $fontSize * 1.3;
+            }
           }
         }
       }
