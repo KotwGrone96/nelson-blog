@@ -27,6 +27,17 @@ export default function NavBar() {
         link.style.color = `${theme === 'light' ? '#000000' : '#ffffff'}`;
       }
     });
+    if (path === '/blog/[post]') {
+      arrayLinks[1].style.background = `${
+        theme === 'light'
+          ? 'linear-gradient(to left, #434343, #000000)'
+          : 'linear-gradient(to right, #ff8008, #ffc837)'
+      }`;
+      arrayLinks[1].style.color = `${
+        theme === 'light' ? '#ffffff' : '#000000'
+      }`;
+      return;
+    }
   }, [path, theme]);
 
   return (

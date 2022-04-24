@@ -45,7 +45,7 @@ export default function Blog() {
               </p>
             </div>
             <div className='articles-links'>
-              <Link href='/blog'>
+              <Link href='/blog/articulo1'>
                 <a
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -56,10 +56,10 @@ export default function Blog() {
                       : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
                   }
                 >
-                  Artículo
+                  Artículo 1
                 </a>
               </Link>
-              <Link href='/blog'>
+              <Link href='/blog/articulo2'>
                 <a
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -70,10 +70,10 @@ export default function Blog() {
                       : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
                   }
                 >
-                  Artículo
+                  Artículo 2
                 </a>
               </Link>
-              <Link href='/blog'>
+              <Link href='/blog/articulo3'>
                 <a
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -84,10 +84,10 @@ export default function Blog() {
                       : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
                   }
                 >
-                  Artículo
+                  Artículo 3
                 </a>
               </Link>
-              <Link href='/blog'>
+              <Link href='/blog/articulo4'>
                 <a
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -98,10 +98,10 @@ export default function Blog() {
                       : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
                   }
                 >
-                  Artículo
+                  Artículo 4
                 </a>
               </Link>
-              <Link href='/blog'>
+              <Link href='/blog/articulo5'>
                 <a
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -112,10 +112,10 @@ export default function Blog() {
                       : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
                   }
                 >
-                  Artículo
+                  Artículo 5
                 </a>
               </Link>
-              <Link href='/blog'>
+              <Link href='/blog/articulo6'>
                 <a
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -126,7 +126,7 @@ export default function Blog() {
                       : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
                   }
                 >
-                  Artículo
+                  Artículo 6
                 </a>
               </Link>
             </div>
