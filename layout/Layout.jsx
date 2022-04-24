@@ -13,7 +13,11 @@ export default function Layout({ children }) {
       <>
         <header
           id='header'
-          style={theme === 'light' ? {} : { background: '#1f1f1f' }}
+          style={
+            theme === 'light'
+              ? { boxShadow: '0px 2px 10px #0f0f0f' }
+              : { background: '#1f1f1f', boxShadow: '0px 2px 10px #0f0f0f' }
+          }
         >
           <div className='header-item logo-container'>
             <Image

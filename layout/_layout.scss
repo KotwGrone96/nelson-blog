@@ -1,4 +1,12 @@
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  z-index: 1000;
+  transition-property: background-color, color;
+  transition-duration: 0.5s;
   .logo-container {
     width: 250px;
     height: 123px;

@@ -14,8 +14,12 @@ $fontSize: 16px;
 
 body {
   overflow-x: hidden;
-  min-height: 150vh;
   background-color: $lessWhite;
+  position: relative;
+  #main-content {
+    max-width: 1700px;
+    margin: 0 auto;
+  }
   h1 {
     font-size: $fontSize * 2;
     font-weight: 700;
@@ -47,3 +51,4 @@ body {
 }
 
 @import './../layout/layout';
+@import './../pages/home';
