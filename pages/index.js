@@ -3,6 +3,7 @@ import Banner from '../components/Banner';
 import Layout from '../layout/Layout';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import Link from 'next/link';
 
 export default function Home() {
   const { data } = useContext(ThemeContext);
@@ -47,11 +48,31 @@ export default function Home() {
               </p>
             </div>
             <section id='articles-wall'>
-              <div className='acticle'>Extensiones VS Code</div>
-              <div className='acticle'>Semántica HTML</div>
-              <div className='acticle'>Css tips and tricks</div>
-              <div className='acticle'>Entendiendo Javascript</div>
-              <div className='acticle'>GIT básico</div>
+              <Link href='/'>
+                <a className='article'>
+                  <h3>Extensiones para Visual Studio Code</h3>
+                </a>
+              </Link>
+              <Link href='/'>
+                <a className='article'>
+                  <h3>Css tips and tricks</h3>
+                </a>
+              </Link>
+              <Link href='/'>
+                <a className='article'>
+                  <h3>Entendiendo Javascript</h3>
+                </a>
+              </Link>
+              <Link href='/'>
+                <a className='article'>
+                  <h3>Entendiendo Javascript</h3>
+                </a>
+              </Link>
+              <Link href='/'>
+                <a className='article'>
+                  <h3>La importancia de GIT (básico)</h3>
+                </a>
+              </Link>
             </section>
           </div>
         </main>
