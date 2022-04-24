@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Blog de Nelson</title>
+        <title>Blog de Nelson | Inicio</title>
         <meta
           name='description'
           content='Blog para ayudar a web developers que recién están empezando'

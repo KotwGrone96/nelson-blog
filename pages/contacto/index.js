@@ -3,7 +3,11 @@ export default function Contact() {
   return (
     <>
       <Layout>
-        <h1>Contacto</h1>
+        <main>
+          <div id='main-content'>
+            <h1>Contacto</h1>
+          </div>
+        </main>
       </Layout>
     </>
   );
