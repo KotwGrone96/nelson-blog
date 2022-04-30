@@ -3,7 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
-export default function Blog() {
+
+export default function Blog({ posts }) {
   const { data } = useContext(ThemeContext);
   const { theme } = data;
 
@@ -45,90 +46,27 @@ export default function Blog() {
               </p>
             </div>
             <div className='articles-links'>
-              <Link href='/blog/articulo1'>
-                <a
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  className='link'
-                  style={
-                    theme === 'light'
-                      ? {}
-                      : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
-                  }
-                >
-                  Artículo 1
-                </a>
-              </Link>
-              <Link href='/blog/articulo2'>
-                <a
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  className='link'
-                  style={
-                    theme === 'light'
-                      ? {}
-                      : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
-                  }
-                >
-                  Artículo 2
-                </a>
-              </Link>
-              <Link href='/blog/articulo3'>
-                <a
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  className='link'
-                  style={
-                    theme === 'light'
-                      ? {}
-                      : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
-                  }
-                >
-                  Artículo 3
-                </a>
-              </Link>
-              <Link href='/blog/articulo4'>
-                <a
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  className='link'
-                  style={
-                    theme === 'light'
-                      ? {}
-                      : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
-                  }
-                >
-                  Artículo 4
-                </a>
-              </Link>
-              <Link href='/blog/articulo5'>
-                <a
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  className='link'
-                  style={
-                    theme === 'light'
-                      ? {}
-                      : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
-                  }
-                >
-                  Artículo 5
-                </a>
-              </Link>
-              <Link href='/blog/articulo6'>
-                <a
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  className='link'
-                  style={
-                    theme === 'light'
-                      ? {}
-                      : { color: '#f1f1f1', borderBottom: '1px solid #686868' }
-                  }
-                >
-                  Artículo 6
-                </a>
-              </Link>
+              {posts.map(post => {
+                return (
+                  <Link href={`/blog/${post.name}`} key={post.id}>
+                    <a
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      className='link'
+                      style={
+                        theme === 'light'
+                          ? {}
+                          : {
+                              color: '#f1f1f1',
+                              borderBottom: '1px solid #686868',
+                            }
+                      }
+                    >
+                      {post.title}
+                    </a>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </main>
@@ -136,3 +74,13 @@ export default function Blog() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch('http://localhost:5000/blog-de-nelson');
+  const posts = await res.json();
+  return {
+    props: {
+      posts,
+    },
+  };
+};

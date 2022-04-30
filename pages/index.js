@@ -55,12 +55,12 @@ export default function Home() {
               </Link>
               <Link href='/'>
                 <a className='article'>
-                  <h3>Css tips and tricks</h3>
+                  <h3>HTML Semántico</h3>
                 </a>
               </Link>
               <Link href='/'>
                 <a className='article'>
-                  <h3>Entendiendo Javascript</h3>
+                  <h3>CSS tips and tricks</h3>
                 </a>
               </Link>
               <Link href='/'>
