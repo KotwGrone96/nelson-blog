@@ -48,56 +48,31 @@ export default function Home() {
               </p>
             </div>
             <section id='articles-wall'>
-              <Link href='/'>
+              <Link href='/blog/extensiones-vs-code'>
                 <a className='article'>
                   <h3>Extensiones para Visual Studio Code</h3>
                 </a>
               </Link>
-              <Link href='/'>
+              <Link href='/blog/html-semantico'>
                 <a className='article'>
                   <h3>HTML Semántico</h3>
                 </a>
               </Link>
-              <Link href='/'>
+              <Link href='/blog/css-tips'>
                 <a className='article'>
-                  <h3>CSS tips and tricks</h3>
+                  <h3>CSS Tips</h3>
                 </a>
               </Link>
-              <Link href='/'>
+              <Link href='/blog/entendiendo-javascript'>
                 <a className='article'>
                   <h3>Entendiendo Javascript</h3>
                 </a>
               </Link>
-              <Link href='/'>
+              <Link href='/blog/la-importancia-de-git'>
                 <a className='article'>
-                  <h3>La importancia de GIT (básico)</h3>
+                  <h3>La importancia de GIT</h3>
                 </a>
               </Link>
-            </section>
-            <section id='other-articles'>
-              <h2>Otros temas</h2>
-              <div className='other-wall'>
-                <Link href='/'>
-                  <a className='article'>
-                    <h3>¿Por qué usar Sass?</h3>
-                  </a>
-                </Link>
-                <Link href='/'>
-                  <a className='article'>
-                    <h3>Entendiendo NPM</h3>
-                  </a>
-                </Link>
-                <Link href='/'>
-                  <a className='article'>
-                    <h3>¿Qué es package.json?</h3>
-                  </a>
-                </Link>
-                <Link href='/'>
-                  <a className='article'>
-                    <h3>Freamework !== Librería</h3>
-                  </a>
-                </Link>
-              </div>
             </section>
           </div>
         </main>

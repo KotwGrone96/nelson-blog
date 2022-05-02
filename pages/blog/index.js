@@ -3,6 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
+import matter from 'gray-matter';
+import fs from 'fs';
+import path from 'path';
 
 export default function Blog({ posts }) {
   const { data } = useContext(ThemeContext);
@@ -48,7 +51,7 @@ export default function Blog({ posts }) {
             <div className='articles-links'>
               {posts.map(post => {
                 return (
-                  <Link href={`/blog/${post.name}`} key={post.id}>
+                  <Link href={`/blog/${post.slug}`} key={post.slug}>
                     <a
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
@@ -62,7 +65,7 @@ export default function Blog({ posts }) {
                             }
                       }
                     >
-                      {post.title}
+                      {post.frontmatter.title}
                     </a>
                   </Link>
                 );
@@ -76,8 +79,16 @@ export default function Blog({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:5000/blog-de-nelson');
-  const posts = await res.json();
+  const files = fs.readdirSync(path.join('posts'));
+  const posts = files.map(file => {
+    const slug = file.replace('.md', '');
+    const markdownMeta = fs.readFileSync(path.join('posts', file), 'utf-8');
+    const { data: frontmatter } = matter(markdownMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
   return {
     props: {
       posts,

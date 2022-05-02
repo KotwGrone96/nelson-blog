@@ -1,9 +1,20 @@
 #post-page {
   margin-top: 209px;
+  .post {
+    h1,
+    p {
+      padding: 0.5em;
+    }
+  }
 }
 
 @media screen and (min-width: 992px) {
   #post-page {
     margin-top: 123px;
+    .post-title {
+      p {
+        padding: 0;
+      }
+    }
   }
 }
