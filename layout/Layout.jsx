@@ -3,12 +3,13 @@ import NavBar from '../components/NavBar';
 import { useRef, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import Footer from '../components/Footer';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 export default function Layout({ children }) {
   const themeRef = useRef();
   const { data } = useContext(ThemeContext);
   const { handleTheme, theme } = data;
-
+  useLocalStorage();
   return (
     <>
       <>
