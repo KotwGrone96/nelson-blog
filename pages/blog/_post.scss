@@ -1,9 +1,56 @@
 #post-page {
   margin-top: 209px;
+  padding-bottom: 100px;
+  overflow-x: hidden;
   .post {
+    width: 100%;
     h1,
+    p,
+    h2 {
+      padding: $fontSize;
+    }
+    h1 {
+      font-size: $fontSize * 3;
+      line-height: 55px;
+    }
+    h2 {
+      font-size: $fontSize * 2;
+    }
+    h2,
     p {
-      padding: 0.5em;
+      text-align: start;
+      a {
+        color: $orange;
+        display: block;
+        margin: 1em 0;
+      }
+      #eslint-config {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 100%;
+        max-width: 700px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    p {
+      letter-spacing: 1px;
+    }
+    pre {
+      background-color: #333;
+      text-align: start;
+      width: 95%;
+      max-width: 500px;
+      padding: 1em;
+      margin: 1em auto;
+      code {
+        color: $white;
+        font-family: 'Roboto', sans-serif;
+        font-size: $fontSize * 0.9;
+      }
     }
   }
 }
@@ -11,9 +58,22 @@
 @media screen and (min-width: 992px) {
   #post-page {
     margin-top: 123px;
-    .post-title {
-      p {
-        padding: 0;
+    .post {
+      h1 {
+        font-size: $fontSize * 4;
+      }
+      h2 {
+        font-size: $fontSize * 2.5;
+      }
+      p,
+      h2 {
+        padding: $fontSize 0;
+        padding-left: 0;
+      }
+      pre {
+        code {
+          font-size: $fontSize;
+        }
       }
     }
   }
