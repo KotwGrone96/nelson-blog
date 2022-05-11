@@ -198,7 +198,7 @@ A continuación te dejaré unas líneas de código para que prettier automática
 ## Path Intellisense
 
 Esta herramienta te ayudará a autocompletar el path de cualquier archivo.<br/>
-Esto es muy útil cuando tabajamos con módulos y queremos importar archivos que no son .js o .jsx, ya que como dije antes esta extensión buscar cualquier tipo de archivo.
+Esto es muy útil cuando tabajamos con módulos y queremos importar archivos que no son .js o .jsx, ya que como dije antes esta extensión buscará cualquier tipo de archivo.
 
 <br/>
 

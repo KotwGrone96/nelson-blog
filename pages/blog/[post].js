@@ -1,5 +1,5 @@
 import Layout from '../../layout/Layout';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import Head from 'next/head';
 import fs from 'fs';
@@ -10,6 +10,13 @@ import { marked } from 'marked';
 export default function Post({ frontmatter: { title }, content }) {
   const { data } = useContext(ThemeContext);
   const { theme } = data;
+
+  useEffect(() => {
+    const links = Object.values(document.querySelectorAll('a'));
+    const otherLinks = links.splice(3, links.length - 1);
+    otherLinks.forEach(link => link.setAttribute('target', '_blank'));
+  }, []);
+
   return (
     <>
       <Head>

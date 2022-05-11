@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
       <div className={style.footer_text}>
         <p>Diseño y desarrollo por Nelson gamero</p>
-        <p>Web creada con Next JS</p>
+        <p>Web creada con Next JS y Markdown</p>
       </div>
     </footer>
   );

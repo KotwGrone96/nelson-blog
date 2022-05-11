@@ -4,10 +4,23 @@
   overflow-x: hidden;
   .post {
     width: 100%;
+    ul {
+      list-style: circle;
+      padding: 1em 0;
+      padding-left: $fontSize * 2;
+      li {
+        text-align: start;
+        font-size: $fontSize;
+      }
+    }
     h1,
     p,
-    h2 {
+    h2,
+    h3 {
       padding: $fontSize;
+    }
+    h3 {
+      padding-bottom: 0;
     }
     h1 {
       font-size: $fontSize * 3;
@@ -17,12 +30,13 @@
       font-size: $fontSize * 2;
     }
     h2,
+    h3,
     p {
       text-align: start;
       a {
         color: $orange;
-        display: block;
-        margin: 1em 0;
+        display: inline-block;
+        margin: 1em auto;
       }
       #eslint-config {
         display: inline-block;
@@ -46,11 +60,17 @@
       max-width: 500px;
       padding: 1em;
       margin: 1em auto;
+      overflow-x: auto;
       code {
         color: $white;
         font-family: 'Roboto', sans-serif;
         font-size: $fontSize * 0.9;
       }
+    }
+    .main-item {
+      text-decoration: underline;
+      text-decoration-color: $orange;
+      text-decoration-style: wavy;
     }
   }
 }
@@ -59,6 +79,12 @@
   #post-page {
     margin-top: 123px;
     .post {
+      ul {
+        padding-left: $fontSize * 1.3;
+        li {
+          font-size: $fontSize * 1.2;
+        }
+      }
       h1 {
         font-size: $fontSize * 4;
       }
@@ -66,9 +92,13 @@
         font-size: $fontSize * 2.5;
       }
       p,
-      h2 {
+      h2,
+      h3 {
         padding: $fontSize 0;
         padding-left: 0;
+      }
+      h3 {
+        font-size: $fontSize * 1.8;
       }
       pre {
         code {
