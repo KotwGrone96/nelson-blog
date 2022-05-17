@@ -162,7 +162,7 @@ Esta extensión nos brindará una ayuda visual increíble a la hora de escribir 
 ## Eslint
 
 Eslint es sin dudas una extensión que vas a necesitar en tu camino cómo programador y que va a ayudar mucho a que tu código sea más limpio y que tenga buenas prácticas.<br/>
-Para poder usar Eslint de manera correcta debemos configurar antes este lintern, eso te muestro acá en <span id="eslint-config">[Configurando Eslint](#)</span>.<br/>
+Para poder usar Eslint de manera correcta debemos configurar antes este lintern, eso te muestro acá en <span id="line-span">[Configurando Eslint](#)</span>.<br/>
 Por lo pronto instalalo en tu editor de código.
 <br/>
 

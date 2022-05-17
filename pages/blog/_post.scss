@@ -38,10 +38,14 @@
         display: inline-block;
         margin: 1em auto;
       }
-      #eslint-config {
+      #line-span {
         display: inline-block;
         margin: 0;
         padding: 0;
+        a {
+          margin: 0;
+          padding: 0;
+        }
       }
       img {
         width: 100%;
