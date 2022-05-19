@@ -5,6 +5,8 @@ const emailRegex =
   /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 const contentRagex = /^.{4,256}$/;
 
-const regExp = { nameRegex, subjectRagex, emailRegex, contentRagex };
+const regExpObj = { nameRegex, subjectRagex, emailRegex, contentRagex };
 
-export default regExp;
+export default function regExp() {
+  return regExpObj;
+}

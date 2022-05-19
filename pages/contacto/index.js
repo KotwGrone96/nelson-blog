@@ -14,7 +14,7 @@ export default function Contact() {
   const $subject = useRef(null);
   const $content = useRef(null);
 
-  const { contentRagex, emailRegex, nameRegex, subjectRagex } = regExp;
+  const { contentRagex, emailRegex, nameRegex, subjectRagex } = regExp();
 
   const initialForm = {
     name: '',
