@@ -4,7 +4,6 @@ import { useContext, useEffect, useState, useRef } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import Image from 'next/image';
 import sendForm from './sendForm';
-import regExp from './regExp';
 
 export default function Contact() {
   const { data } = useContext(ThemeContext);
@@ -14,7 +13,12 @@ export default function Contact() {
   const $subject = useRef(null);
   const $content = useRef(null);
 
-  const { contentRagex, emailRegex, nameRegex, subjectRagex } = regExp();
+  const nameRegex = /^([a-zñáéíóúA-ZÁÉÍÓÚÑ]+[\s]?)+[A-Za-zñÑáéíóúÁÉÍÓÚ]+$/;
+  const subjectRagex =
+    /^([a-zñáéíóúA-ZÁÉÍÓÚÑ0-9-_]+[\s]?)+[A-Za-zñÑáéíóúÁÉÍÓÚ0-9]+$/;
+  const emailRegex =
+    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+  const contentRagex = /^.{4,256}$/;
 
   const initialForm = {
     name: '',
