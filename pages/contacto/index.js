@@ -4,7 +4,7 @@ import { useContext, useEffect, useState, useRef } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import Image from 'next/image';
 import sendForm from './sendForm';
-import { nameRegex, emailRegex, contentRagex, subjectRagex } from './regExp';
+import regExp from './regExp';
 
 export default function Contact() {
   const { data } = useContext(ThemeContext);
@@ -13,6 +13,8 @@ export default function Contact() {
   const $email = useRef(null);
   const $subject = useRef(null);
   const $content = useRef(null);
+
+  const { contentRagex, emailRegex, nameRegex, subjectRagex } = regExp;
 
   const initialForm = {
     name: '',
