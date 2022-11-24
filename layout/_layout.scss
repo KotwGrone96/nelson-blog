@@ -8,43 +8,44 @@
   transition-property: background-color, color;
   transition-duration: 0.5s;
   .logo-container {
-    width: 250px;
-    height: 123px;
+    width: 125px;
     position: relative;
     margin: 0 auto;
+    padding-top: 0.5rem;
     .logo {
-      transform: scale(0.8);
+      width: 100%;
+      object-fit: cover;
     }
     .theme-dark-logo {
-      filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(280deg)
-        brightness(107%) contrast(101%);
+      filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(280deg) brightness(107%) contrast(101%);
     }
   }
   .utilities-container {
-    @include displayFlex(space-evenly, center);
-    max-width: 200px;
+    // @include displayFlex(space-evenly, center);
+    // max-width: 200px;
     margin: 0 auto;
     padding: 1em 0;
     .search {
       @include displayFlex(center, center);
       cursor: pointer;
       .theme-dark-search {
-        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(280deg)
-          brightness(107%) contrast(101%);
+        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(280deg) brightness(107%)
+          contrast(101%);
       }
     }
     .theme {
-      position: relative;
-      min-width: 30px;
-      min-height: 30px;
+      position: absolute;
+      top: 5vw;
+      right: 5vh;
+      width: 30px;
+      height: 30px;
+      z-index: 100;
       .theme-item {
-        position: absolute;
-        z-index: 100;
         display: none;
         cursor: pointer;
         .theme-dark-icon {
-          filter: invert(59%) sepia(40%) saturate(3561%) hue-rotate(353deg)
-            brightness(99%) contrast(105%);
+          filter: invert(59%) sepia(40%) saturate(3561%) hue-rotate(353deg) brightness(99%)
+            contrast(105%);
         }
       }
       .active-theme {
@@ -54,14 +55,31 @@
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   #header {
     @include displayFlex(center, center);
     .header-item {
       margin: 0;
     }
     .utilities-container {
-      width: 250px;
+      .theme {
+        top: 3vw;
+        right: 5vh;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #header {
+    .logo-container {
+      width: 175px;
+    }
+    .utilities-container {
+      .theme {
+        top: 35px;
+        right: 5vh;
+      }
     }
   }
 }

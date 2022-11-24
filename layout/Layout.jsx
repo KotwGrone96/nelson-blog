@@ -22,19 +22,25 @@ export default function Layout({ children }) {
           }
         >
           <div className='header-item logo-container'>
-            <Image
+            <img
               src='/images/logo-250x123.png'
               alt='nelson gamero'
-              objectFit='cover'
-              layout='fill'
               className={`logo ${theme === 'light' ? '' : 'theme-dark-logo'}`}
-              priority
             />
+            {/* <Image
+                src='/images/logo-250x123.png'
+                alt='nelson gamero'
+                objectFit='cover'
+                layout='fill'
+                className={`logo ${theme === 'light' ? '' : 'theme-dark-logo'}`}
+                priority
+              /> */}
           </div>
+
           <NavBar />
 
           <div className='header-item utilities-container'>
-            <span
+            {/* <span
               className='search'
               style={theme === 'light' ? {} : { color: '#ffffff' }}
             >
@@ -43,44 +49,33 @@ export default function Layout({ children }) {
                 alt='buscar'
                 width={30}
                 height={30}
-                className={`logo ${
-                  theme === 'light' ? '' : 'theme-dark-search'
-                }`}
+                className={`logo ${theme === 'light' ? '' : 'theme-dark-search'}`}
               />
               Buscar
-            </span>
-            <div className='theme' ref={themeRef}>
-              <div
-                className={`theme-item ${
-                  theme === 'light' ? 'active-theme' : ''
-                }`}
-              >
+            </span> */}
+            <div
+              className='theme'
+              ref={themeRef}
+            >
+              <div className={`theme-item ${theme === 'light' ? 'active-theme' : ''}`}>
                 <Image
                   src='/images/moon-solid.svg'
                   alt='dark'
                   width={25}
                   height={25}
                   onClick={handleTheme}
-                  className={`logo ${
-                    theme === 'light' ? '' : 'theme-dark-icon'
-                  }`}
+                  className={`logo ${theme === 'light' ? '' : 'theme-dark-icon'}`}
                 />
               </div>
 
-              <div
-                className={`theme-item ${
-                  theme === 'dark' ? 'active-theme' : ''
-                }`}
-              >
+              <div className={`theme-item ${theme === 'dark' ? 'active-theme' : ''}`}>
                 <Image
                   src='/images/sun-solid.svg'
                   alt='light'
                   width={25}
                   height={25}
                   onClick={handleTheme}
-                  className={`logo ${
-                    theme === 'light' ? '' : 'theme-dark-icon'
-                  }`}
+                  className={`logo ${theme === 'light' ? '' : 'theme-dark-icon'}`}
                 />
               </div>
             </div>

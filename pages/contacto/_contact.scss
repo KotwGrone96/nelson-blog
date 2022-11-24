@@ -1,5 +1,5 @@
 #contact-page {
-  margin-top: 209px;
+  margin-top: 130px;
   .contact-text {
     padding: 0 $fontSize * 2;
     padding-top: $fontSize * 2;
@@ -31,26 +31,26 @@
         @include displayFlex(space-evenly, center);
         &:first-child {
           .img {
-            filter: invert(81%) sepia(11%) saturate(3899%) hue-rotate(78deg)
-              brightness(90%) contrast(81%);
+            filter: invert(81%) sepia(11%) saturate(3899%) hue-rotate(78deg) brightness(90%)
+              contrast(81%);
           }
         }
         &:nth-child(2) {
           .img {
-            filter: invert(38%) sepia(71%) saturate(1912%) hue-rotate(174deg)
-              brightness(88%) contrast(101%);
+            filter: invert(38%) sepia(71%) saturate(1912%) hue-rotate(174deg) brightness(88%)
+              contrast(101%);
           }
         }
         &:nth-child(3) {
           .img {
-            filter: invert(20%) sepia(99%) saturate(1585%) hue-rotate(178deg)
-              brightness(100%) contrast(101%);
+            filter: invert(20%) sepia(99%) saturate(1585%) hue-rotate(178deg) brightness(100%)
+              contrast(101%);
           }
         }
         &:nth-child(4) {
           .img {
-            filter: invert(62%) sepia(85%) saturate(3240%) hue-rotate(355deg)
-              brightness(100%) contrast(102%);
+            filter: invert(62%) sepia(85%) saturate(3240%) hue-rotate(355deg) brightness(100%)
+              contrast(102%);
           }
         }
       }
@@ -92,9 +92,15 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  #contact-page {
+    margin-top: 75px;
+  }
+}
+
 @media screen and (min-width: 992px) {
   #contact-page {
-    margin-top: 123px;
+    margin-top: 99px;
     .contact-text {
       padding: 0;
       padding-top: $fontSize * 2;

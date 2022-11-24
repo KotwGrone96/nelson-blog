@@ -1,5 +1,6 @@
 #blog-page {
-  margin-top: 209px;
+  margin-top: 130px;
+  padding-bottom: 75px;
   .blog-presentation,
   .articles-links {
     padding: 0 $fontSize * 2;
@@ -30,15 +31,35 @@
       font-weight: 700;
       font-style: italic;
       transition: background-color 0.5s;
+      position: relative;
+      .link-date {
+        position: absolute;
+        right: 7px;
+        bottom: 0;
+        font-size: 10px;
+        color: $orange;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #blog-page {
+    margin-top: 75px;
+    .articles-links {
+      .link {
+        .link-date {
+          font-size: 16px;
+        }
+      }
     }
   }
 }
 
 @media screen and (min-width: 992px) {
   #blog-page {
-    margin-top: 123px;
+    margin-top: 99px;
     .blog-presentation {
-      padding: 0;
       padding-top: $fontSize * 2;
       h1 {
         font-size: $fontSize * 4;
@@ -48,7 +69,6 @@
       }
     }
     .articles-links {
-      padding: 0;
       padding-top: $fontSize * 2;
       .link {
         padding-left: $fontSize;
