@@ -13,8 +13,12 @@ export default function NavBar() {
 
   useEffect(() => {
     const arrayLinks = Object.values(links.current.children);
-    arrayLinks.forEach(link => {
-      const linkPath = link.pathname;
+    arrayLinks.forEach((link) => {
+      const linkPath =
+        path === '/'
+          ? link.pathname.replace('/nelsonblog', '/')
+          : link.pathname.replace('/nelsonblog', '');
+
       if (linkPath === path) {
         link.style.background = `${
           theme === 'light'
@@ -33,16 +37,17 @@ export default function NavBar() {
           ? 'linear-gradient(to left, #434343, #000000)'
           : 'linear-gradient(to right, #ff8008, #ffc837)'
       }`;
-      arrayLinks[1].style.color = `${
-        theme === 'light' ? '#ffffff' : '#000000'
-      }`;
+      arrayLinks[1].style.color = `${theme === 'light' ? '#ffffff' : '#000000'}`;
       return;
     }
   }, [path, theme]);
 
   return (
     <>
-      <nav ref={links} className={style.navbar}>
+      <nav
+        ref={links}
+        className={style.navbar}
+      >
         <Link href='/'>
           <a className={style.navbar_item}>Inicio</a>
         </Link>

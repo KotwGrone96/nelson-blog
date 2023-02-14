@@ -1,4 +1,4 @@
-import '../sass/globals.scss';
+import './../sass/globals.scss';
 import { ThemeProvider } from '../context/ThemeContext';
 
 function MyApp({ Component, pageProps }) {

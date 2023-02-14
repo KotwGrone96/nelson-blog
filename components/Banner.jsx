@@ -17,7 +17,7 @@ export default function Banner() {
         <h1 className={style.banner_h1}>El Blog De Nelson</h1>
         <div className={`${style.banner_image} tilt`}>
           <img
-            src='/images/sonic.png'
+            src='/nelsonblog/images/sonic.png'
             alt='sonic'
           />
           {/* <Image

@@ -23,7 +23,7 @@ export default function Layout({ children }) {
         >
           <div className='header-item logo-container'>
             <img
-              src='/images/logo-250x123.png'
+              src='/nelsonblog/images/logo-250x123.png'
               alt='nelson gamero'
               className={`logo ${theme === 'light' ? '' : 'theme-dark-logo'}`}
             />
@@ -59,7 +59,7 @@ export default function Layout({ children }) {
             >
               <div className={`theme-item ${theme === 'light' ? 'active-theme' : ''}`}>
                 <Image
-                  src='/images/moon-solid.svg'
+                  src='/nelsonblog/images/moon-solid.svg'
                   alt='dark'
                   width={25}
                   height={25}
@@ -70,7 +70,7 @@ export default function Layout({ children }) {
 
               <div className={`theme-item ${theme === 'dark' ? 'active-theme' : ''}`}>
                 <Image
-                  src='/images/sun-solid.svg'
+                  src='/nelsonblog/images/sun-solid.svg'
                   alt='light'
                   width={25}
                   height={25}

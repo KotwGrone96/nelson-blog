@@ -13,7 +13,7 @@ export default function Footer() {
         >
           <Image
             className={style.img}
-            src='/images/instagram.svg'
+            src='/nelsonblog/images/instagram.svg'
             alt='instagram'
             width={40}
             height={40}
@@ -26,7 +26,7 @@ export default function Footer() {
         >
           <Image
             className={style.img}
-            src='/images/youtube.svg'
+            src='/nelsonblog/images/youtube.svg'
             alt='youtube'
             width={40}
             height={40}
@@ -39,7 +39,7 @@ export default function Footer() {
         >
           <Image
             className={style.img}
-            src='/images/twitter.svg'
+            src='/nelsonblog/images/twitter.svg'
             alt='twitter'
             width={40}
             height={40}
@@ -52,7 +52,7 @@ export default function Footer() {
         >
           <Image
             className={style.img}
-            src='/images/twitch.svg'
+            src='/nelsonblog/images/twitch.svg'
             alt='twitch'
             width={40}
             height={40}

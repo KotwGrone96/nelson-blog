@@ -14,8 +14,7 @@ export default function Contact() {
   const $content = useRef(null);
 
   const nameRegex = /^([a-zñáéíóúA-ZÁÉÍÓÚÑ]+[\s]?)+[A-Za-zñÑáéíóúÁÉÍÓÚ]+$/;
-  const subjectRagex =
-    /^([a-zñáéíóúA-ZÁÉÍÓÚÑ0-9-_]+[\s]?)+[A-Za-zñÑáéíóúÁÉÍÓÚ0-9]+$/;
+  const subjectRagex = /^([a-zñáéíóúA-ZÁÉÍÓÚÑ0-9-_]+[\s]?)+[A-Za-zñÑáéíóúÁÉÍÓÚ0-9]+$/;
   const emailRegex =
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
   const contentRagex = /^.{4,256}$/;
@@ -38,17 +37,17 @@ export default function Contact() {
   useEffect(() => {
     const $formInputs = Object.values(document.querySelectorAll('.form-input'));
     if (theme === 'light') {
-      $formInputs.forEach(input => {
+      $formInputs.forEach((input) => {
         input.style.backgroundColor = '#1f1f1f';
       });
     } else {
-      $formInputs.forEach(input => {
+      $formInputs.forEach((input) => {
         input.style.backgroundColor = '#000000';
       });
     }
   }, [theme]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (e.target.name === 'name') {
       nameRegex.test($name.current.value)
@@ -76,7 +75,7 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const { name, content, subject, email } = validationForm;
     if (name && content && subject && email) {
@@ -100,19 +99,15 @@ export default function Contact() {
       <Layout>
         <main
           id='contact-page'
-          style={
-            theme === 'light'
-              ? {}
-              : { backgroundColor: '#1f1f1f', color: '#ffffff' }
-          }
+          style={theme === 'light' ? {} : { backgroundColor: '#1f1f1f', color: '#ffffff' }}
         >
           <div id='main-content'>
             <div className='contact-text'>
               <h1>Contacto</h1>
               <p>
-                En caso que tengas dudas de algo o simplemente quieras aportar
-                contenido al blog te estaré dejando varias maneras de ponernos
-                en contacto. Sentite libre de escribirme cuando gustes 🙂
+                En caso que tengas dudas de algo o simplemente quieras aportar contenido al blog te
+                estaré dejando varias maneras de ponernos en contacto. Sentite libre de escribirme
+                cuando gustes 🙂
               </p>
             </div>
             <section className='social-links'>
@@ -124,7 +119,7 @@ export default function Contact() {
                   target='_blank'
                 >
                   <Image
-                    src='/images/whatsapp.svg'
+                    src='/nelsonblog/images/whatsapp.svg'
                     alt='whats app'
                     width={30}
                     height={30}
@@ -137,7 +132,7 @@ export default function Contact() {
                   target='_blank'
                 >
                   <Image
-                    src='/images/telegram.svg'
+                    src='/nelsonblog/images/telegram.svg'
                     alt='telegram'
                     width={30}
                     height={30}
@@ -150,7 +145,7 @@ export default function Contact() {
                   target='_blank'
                 >
                   <Image
-                    src='/images/linkedin.svg'
+                    src='/nelsonblog/images/linkedin.svg'
                     alt='linkedin'
                     width={30}
                     height={30}
@@ -163,7 +158,7 @@ export default function Contact() {
                   rel='noreferrer'
                 >
                   <Image
-                    src='/images/email.svg'
+                    src='/nelsonblog/images/email.svg'
                     alt='email'
                     width={30}
                     height={30}
@@ -192,7 +187,10 @@ export default function Contact() {
                   ref={$name}
                 />
                 {!validation.name ? (
-                  <label htmlFor='name' style={{ color: '#f00' }}>
+                  <label
+                    htmlFor='name'
+                    style={{ color: '#f00' }}
+                  >
                     Solo mayúsculas, minúsculas y un espacio entre palabras
                   </label>
                 ) : (
@@ -210,7 +208,10 @@ export default function Contact() {
                   ref={$email}
                 />
                 {!validation.email ? (
-                  <label htmlFor='name' style={{ color: '#f00' }}>
+                  <label
+                    htmlFor='name'
+                    style={{ color: '#f00' }}
+                  >
                     Por favor ingresar un E-mail válido
                   </label>
                 ) : (
@@ -228,9 +229,11 @@ export default function Contact() {
                   ref={$subject}
                 />
                 {!validation.subject ? (
-                  <label htmlFor='subject' style={{ color: '#f00' }}>
-                    Solo mayúsculas, minúsculas, números y un espacio entre
-                    palabras
+                  <label
+                    htmlFor='subject'
+                    style={{ color: '#f00' }}
+                  >
+                    Solo mayúsculas, minúsculas, números y un espacio entre palabras
                   </label>
                 ) : (
                   <></>
@@ -246,13 +249,20 @@ export default function Contact() {
                   ref={$content}
                 ></textarea>
                 {!validation.content ? (
-                  <label htmlFor='content' style={{ color: '#f00' }}>
+                  <label
+                    htmlFor='content'
+                    style={{ color: '#f00' }}
+                  >
                     Mín. 4 caracteres, máx. 256 caracteres
                   </label>
                 ) : (
                   <></>
                 )}
-                <input className='submit' type='submit' value='Enviar' />
+                <input
+                  className='submit'
+                  type='submit'
+                  value='Enviar'
+                />
               </form>
             </section>
           </div>
