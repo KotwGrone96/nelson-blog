@@ -12,4 +12,4 @@ Siguiendo la documentación oficial de Next.js se utilizó Vercel para el deploy
 
 ⏬ ⏬ ⏬ Deploy de la App en Vercel
 
-https://nelson-blog-6cors77r7-kotwgrone96.vercel.app/
+https://nelson-blog.vercel.app/
